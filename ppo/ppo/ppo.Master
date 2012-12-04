@@ -1,0 +1,80 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="ppo.Master.cs" Inherits="ppo.Site1" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<script runat="server">
+    void Page_Load(object sender, EventArgs e)
+    {
+        Label1.Text = "";
+        //HttpContext.Current.Session["user"]
+        if (Session["user"] == null)
+        {
+            Label1.Text = "";
+            linkUser.Text = "";
+            this.logLink.Text = "Login";
+            this.logLink.NavigateUrl = "~/loginform.aspx";
+            this.logLink.Target = "blank";
+            this.regLink.Text = "Register";
+            this.regLink.NavigateUrl = "~/registerform.aspx";
+            this.regLink.Target = "blank";
+        }
+        else
+        {
+            Label1.Text = "Welcome "; linkUser.Text = Session["user"].ToString();
+            this.regLink.Text = "";
+            this.logLink.Text = "Logout";
+            this.logLink.NavigateUrl = "~/logout.aspx";
+            this.logLink.Target = "blank";
+        }
+    }
+    </script>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title></title>
+    <link href="~/Site.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="Form1" runat="server">
+    <div class="page">
+        <div class="header">
+            <div class="title">
+                <h1>
+                    PROGRAMMING PRACTICE ONLINE
+                </h1>
+            </div>
+            <div class="loginDisplay">
+                &nbsp;&nbsp;
+                <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>&nbsp;&nbsp;
+                <asp:HyperLink ID="linkUser" runat="server" NavigateUrl="~/profile.aspx">[linkUser]</asp:HyperLink>
+&nbsp; </br>
+                <asp:HyperLink ID="logLink" runat="server">Login</asp:HyperLink>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:HyperLink ID="regLink" runat="server" NavigateUrl="~/registerform.aspx">Register</asp:HyperLink>
+            </div>
+            <div class="clear hideSkiplink">
+                <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
+                    <Items>
+                        <asp:MenuItem NavigateUrl="~/home.aspx" Text="Home"/>
+                        <asp:MenuItem Text="Lesson" Value="Lesson"/>
+                        <asp:MenuItem NavigateUrl="~/problem.aspx" Text="Problem" Value="Problem">
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="Webboard" Value="Webboard"></asp:MenuItem>
+                        <asp:MenuItem Text="Statistic" Value="Statistic"></asp:MenuItem>
+                    </Items>
+                </asp:Menu>
+            </div>
+        </div>
+        <div class="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div class="footer">
+        
+    </div>
+    </form>
+</body>
+</html>
