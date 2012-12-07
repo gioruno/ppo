@@ -33,6 +33,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -50,10 +51,17 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="loginControl.ascx" />
     <Content Include="logout.aspx" />
     <Content Include="problem.aspx" />
+    <Content Include="problem\Easy\Triangle\Triangle.txt" />
+    <Content Include="problem\level.aspx" />
+    <Content Include="profile\manageUser.aspx" />
     <Content Include="profile.aspx" />
+    <Content Include="profile\uploadProblem.aspx" />
     <Content Include="Site.css" />
+    <Content Include="statistic.aspx" />
+    <Content Include="problem\submit.aspx" />
     <Content Include="test.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -67,6 +75,13 @@
     <Content Include="registerform.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="loginControl.ascx.cs">
+      <DependentUpon>loginControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="loginControl.ascx.designer.cs">
+      <DependentUpon>loginControl.ascx</DependentUpon>
+    </Compile>
     <Compile Include="logout.aspx.cs">
       <DependentUpon>logout.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -82,12 +97,47 @@
     <Compile Include="problem.aspx.designer.cs">
       <DependentUpon>problem.aspx</DependentUpon>
     </Compile>
+    <Compile Include="problem.Master.cs">
+      <DependentUpon>problem.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="problem.Master.designer.cs">
+      <DependentUpon>problem.Master</DependentUpon>
+    </Compile>
+    <Compile Include="profileMaster.Master.cs">
+      <DependentUpon>profileMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="profileMaster.Master.designer.cs">
+      <DependentUpon>profileMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="problem\level.aspx.cs">
+      <DependentUpon>level.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="problem\level.aspx.designer.cs">
+      <DependentUpon>level.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="profile\manageUser.aspx.cs">
+      <DependentUpon>manageUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="profile\manageUser.aspx.designer.cs">
+      <DependentUpon>manageUser.aspx</DependentUpon>
+    </Compile>
     <Compile Include="profile.aspx.cs">
       <DependentUpon>profile.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="profile.aspx.designer.cs">
       <DependentUpon>profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="profile\uploadProblem.aspx.cs">
+      <DependentUpon>uploadProblem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="profile\uploadProblem.aspx.designer.cs">
+      <DependentUpon>uploadProblem.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ppo.Master.cs">
@@ -96,6 +146,20 @@
     </Compile>
     <Compile Include="ppo.Master.designer.cs">
       <DependentUpon>ppo.Master</DependentUpon>
+    </Compile>
+    <Compile Include="statistic.aspx.cs">
+      <DependentUpon>statistic.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="statistic.aspx.designer.cs">
+      <DependentUpon>statistic.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="problem\submit.aspx.cs">
+      <DependentUpon>submit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="problem\submit.aspx.designer.cs">
+      <DependentUpon>submit.aspx</DependentUpon>
     </Compile>
     <Compile Include="test.aspx.cs">
       <DependentUpon>test.aspx</DependentUpon>
@@ -127,10 +191,21 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="problem\Hard\" />
+    <Folder Include="problem\Medium\" />
     <Folder Include="user\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="ppo.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="profileMaster.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="problem.Master" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

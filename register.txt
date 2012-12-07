@@ -1,4 +1,4 @@
-Ôªøusing System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -64,15 +64,15 @@ namespace ppo
             }          
             else if (user.Equals(""))
             {
-                Label2.Text="‡∏Å‡∏£‡∏∏‡∏ì‡∏≤‡∏Å‡∏£‡∏≠‡∏Å‡∏Ç‡πâ‡∏≠‡∏°‡∏π‡∏•";
+                Label2.Text="°√ÿ≥“°√Õ°¢ÈÕ¡Ÿ≈";
             }
             else if (datareader.HasRows)
             {
-                Label2.Text = "‡∏°‡∏µ‡∏ú‡∏π‡πâ‡πÉ‡∏ä‡πâ‡∏ä‡∏∑‡πà‡∏≠‡∏ô‡∏µ‡πâ‡πÅ‡∏•‡πâ‡∏ß";
+                Label2.Text = "¡’ºŸÈ„™È™◊ËÕπ’È·≈È«";
             }
             else if (!password.Equals(cnfpass) || password.Equals(""))
             {
-                Label3.Text = "‡∏û‡∏≤‡∏™‡πÄ‡∏ß‡∏¥‡∏£‡πå‡∏î‡πÑ‡∏°‡πà‡∏ñ‡∏π‡∏Å‡∏ï‡πâ‡∏≠‡∏á";
+                Label3.Text = "æ“ ‡«‘√Ï¥‰¡Ë∂Ÿ°µÈÕß";
             }
             
         }

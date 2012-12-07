@@ -35,28 +35,43 @@ namespace ppo
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            string type;
+            string type="";
             string user = txtUserName.Value.ToString();
             string password = txtUserPass.Value.ToString();
-            string strqry = "SELECT [username],[password],[type] from [ppo].[dbo].[user] where username=@username and password=@password";
+            string strqry = "SELECT [username],[password],[type],[status] from [ppo].[dbo].[user] where username=@username and password=@password";
             SqlCommand cmd = new SqlCommand(strqry, con);
             cmd.Parameters.Add("@username", SqlDbType.VarChar, 50).Value = user;
             cmd.Parameters.Add("@password", SqlDbType.VarChar, 50).Value = password;
 
             con.Open();
             reader = cmd.ExecuteReader();
-            if (reader.HasRows)
+            string uStatus="";
+            while (reader.Read())
+            {
+                uStatus = (string)reader["status"];
+                type = (string)reader["type"];
+            }
+            if (reader.HasRows && uStatus=="active")
             {
                 //Response.Write("<script type='text/javascrip'>alert('Hello Sir');</script>");
+                string prepage=Request.QueryString["prepage"];
                 msgBox.Show("Welcome " + user);
-                reader.Read();
-                type = reader["type"].ToString();
+                //reader.Read();
+                //type = reader["type"].ToString();
                 Session["type"] = type;
                 Session["user"] = user;
                 Session.Timeout = 32;
                 lblMsg.Text = "Login Success";
-                Response.Redirect("~/home.aspx");
+                string qrystr = "username=" + user;
+                if (String.IsNullOrEmpty(prepage))
+                    Response.Redirect("~/home.aspx?" + qrystr);
+                else
+                    Response.Redirect("~/"+prepage+".aspx?" + qrystr);
                 con.Close();
+            }
+            else if (uStatus != "active")
+            {
+                lblMsg.Text = "Your ID has been banned.";
             }
             else
             {

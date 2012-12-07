@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ppo.profile
+namespace ppo
 {
 
 
-    public partial class profile
+    public partial class statistic
     {
     }
 }

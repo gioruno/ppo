@@ -1,0 +1,4 @@
+﻿		Triangle
+Give a,b,c are angles, find what kind of triangle() or not triangle.
+Input n is number of datatest, a,b,c are angles, the input end with 0.
+Goodluck.

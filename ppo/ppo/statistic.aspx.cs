@@ -7,13 +7,13 @@ using System.Web.UI.WebControls;
 
 namespace ppo
 {
-    public partial class problem : System.Web.UI.Page
+    public partial class statistic : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["user"] == null)
             {
-                string qry = Page.Title.ToString(); ;
+                string qry = Page.Title.ToString();
                 Response.Redirect("/loginform.aspx?prepage=" + qry);
             }
         }

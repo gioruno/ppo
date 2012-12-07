@@ -11,7 +11,7 @@ namespace ppo.profile
 {
 
 
-    public partial class profile
+    public partial class uploadProblem
     {
     }
 }

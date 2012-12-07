@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace ppo.profile
 {
-    public partial class profile : System.Web.UI.Page
+    public partial class uploadProblem : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

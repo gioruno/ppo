@@ -1,7 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ppo.Master" AutoEventWireup="true" CodeBehind="loginform.aspx.cs" Inherits="ppo.loginform" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="loginControl.ascx.cs" Inherits="ppo.loginControl" %>
+
 <fieldset>
     <table><tr>
 <td>Username:</td>
@@ -44,8 +42,6 @@ ID="vUserPass" />
     </table>
     </fieldset>
     <p>
-    &nbsp; </p>
-    <asp:Label ID="lblMsg" ForeColor="red" Font-Name="Verdana" Font-Size="10" runat="server" Text="" />
-
-</asp:Content>
-
+    &nbsp; 
+    <asp:Label ID="lblMsg" ForeColor="red" Font-Name="Verdana" Font-Size="10" runat="server" Text="" /> </p>
+    

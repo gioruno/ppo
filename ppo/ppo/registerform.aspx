@@ -3,13 +3,12 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <div>
-         <fieldset>
+         &nbsp;<fieldset>
         <p>
           <label>ชื่อผู้ใช้งาน</label>  
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <!-- add .align-right to align the input elements to the right -->
-          <span style="color: #000; margin-left: 10px;" class="">
-          <span style="color: #000; " class="">
+            <span style="color: #000; margin-left: 10px;" class="">
+            <span style="color: #000; " class="">
             <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
             <asp:Label ID="Label2" runat="server" Text="*"></asp:Label>
             </span></span></p>
@@ -57,12 +56,9 @@
         <p> <small>* ข้อมูลที่ต้องกรอกก>
         <p>
           
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label><span 
-                style="color: #000; " class=""><small><asp:Button ID="submit" 
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<small><asp:Button ID="submit" 
                 runat="server" Text="ยืนยัน" onclick="submit_Click" />
-            </small></span>
-            </label>
-            &nbsp;
+            </small>&nbsp;
             &nbsp;&nbsp;&nbsp;&nbsp;
           &nbsp;&nbsp;&nbsp;
           <input type="reset" name="reset" id="reset" value="ล้าง" onclick="return reset_onclick()" />
@@ -70,6 +66,5 @@
         </p>
              </small></span></span>
              </label>
-</fieldset>
-    </div>
+</fieldset></div>
 </asp:Content>

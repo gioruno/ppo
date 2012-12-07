@@ -1,13 +1,24 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="ppo.Master.cs" Inherits="ppo.Site1" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="problem.master.cs" Inherits="ppo.problem1" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head id="Head1" runat="server">
+   <head id="Head1" runat="server">
     <title></title>
     <link href="~/Site.css" rel="stylesheet" type="text/css" />
     <asp:ContentPlaceHolder ID="HeadContent" runat="server">
     </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .style4
+        {
+            height: 14px;
+            width: 322px;
+        }
+        .style5
+        {
+            width: 322px;
+        }
+    </style>
 </head>
 <body>
     <form id="Form1" runat="server">
@@ -32,8 +43,7 @@
                     <Items>
                         <asp:MenuItem NavigateUrl="~/home.aspx" Text="Home"/>
                         <asp:MenuItem Text="Lesson" Value="Lesson"/>
-                        <asp:MenuItem NavigateUrl="~/problem.aspx?page=home" Text="Problem" 
-                            Value="Problem">
+                        <asp:MenuItem NavigateUrl="~/problem.aspx" Text="Problem" Value="Problem">
                         </asp:MenuItem>
                         <asp:MenuItem Text="Webboard" Value="Webboard"></asp:MenuItem>
                         <asp:MenuItem Text="Statistic" Value="Statistic"></asp:MenuItem>
@@ -42,7 +52,27 @@
             </div>
         </div>
         <div class="main">
-            <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+           <table frame="hsides" style="width: 100%;" id="table1">
+    <tr>
+        <td class="style4" dir="ltr">
+            <asp:Label ID="levellbl" runat="server" Font-Bold="True" Font-Italic="False" 
+                Text="Level"></asp:Label>
+        </td>
+        <td rowspan="2">
+        <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                            
+                        </asp:ContentPlaceHolder>
+            </td>
+    </tr>
+    <tr>
+        <td class="style5" dir="ltr">
+            
+            <asp:PlaceHolder ID="PlaceHolder1" runat="server"></asp:PlaceHolder>
+        </td>
+    </tr>
+</table>
+            <br />
+            
         </div>
         <div class="clear">
         </div>

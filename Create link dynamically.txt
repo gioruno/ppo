@@ -1,0 +1,11 @@
+            HyperLink hyp = new HyperLink();
+            hyp.ID = "hypABD";
+            hyp.Text = "This way";
+            hyp.NavigateUrl = "";
+            Page.Controls.Add(hyp);
+            PlaceHolder1.Controls.Add(hyp);
+            HtmlAnchor link = new HtmlAnchor();
+            link.HRef = "www.stackoverflow.com";
+            link.InnerText = "HtmlAnchorLink";
+            PlaceHolder1.Controls.Add(link);
+            Page.Controls.Add(link);
